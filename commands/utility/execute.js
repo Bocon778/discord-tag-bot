@@ -12,13 +12,17 @@ module.exports = {
 		),
 	async execute(interaction) {
 		if (interaction.member.id !== ownerId) {
-			console.log(`${interaction.member.id} (${interaction.member.user.username}) attemped to execute code`);
-			interaction.reply({content: 'You are not allowed to run this command.', flags: MessageFlags.Ephemeral});
+			console.log(`${interaction.member.id} (${interaction.member.user.username}) attempted to execute code`);
+			await interaction.reply({content: 'You are not allowed to run this command.', flags: MessageFlags.Ephemeral});
 			return
 		};
 
-		eval(interaction.options.getString('code'))
-
-		interaction.reply({content: 'Executed.', flags: MessageFlags.Ephemeral});
+	try {
+		await eval(interaction.options.getString('code'));
+		await interaction.reply({ content: 'Executed.', flags: MessageFlags.Ephemeral });
+	} catch (error) {
+		console.error(`Eval error:\n${error}`);
+		await interaction.reply({ content: `Error: ${error.message}`, flags: MessageFlags.Ephemeral });
+	}
 	},
 };
