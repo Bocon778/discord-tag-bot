@@ -193,7 +193,7 @@ module.exports = {
             const payload = {
                 content: (interaction.options.getMember('mention') ? interaction.options.getMember('mention').toString() : null),
                 embeds: [tagEmbed],
-                flags: (interaction.options.getBoolean('test') ? MessageFlags.Ephemeral : null),
+                flags: (interaction.options.getBoolean('private') ? MessageFlags.Ephemeral : null),
             };
             await interaction.reply(payload);
             this.IncreaseTagUsage(tag.key);
