@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits, Events } = require('discord.js');
-const { token } = require('./config.json');
+const { token, debug, debugtoken } = require('./config.json');
 const client = new Client({ intents: [
 	GatewayIntentBits.Guilds,
 	GatewayIntentBits.GuildMembers,
@@ -44,4 +44,4 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 }
 
-client.login(token);
+client.login(debug ? debugtoken : token).then(debug ? console.log('Debug mode enabled...') : "");

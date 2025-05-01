@@ -1,7 +1,6 @@
 {
   "name": "the-tagger",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +9,10 @@
   "author": "Noobyguy775",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.18.0",
+    "discord.js": "^14.19.1",
     "the-tagger": "file:"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }
