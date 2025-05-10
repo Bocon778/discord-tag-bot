@@ -29,4 +29,4 @@ You can also set these in `config.json` (for debugging)
 - `debugtoken=[DEBUG_BOT_TOKEN]`
 - `debugclientId=[DEBUG_BOT_APPLICATION_ID]`
 ## Credits
-The autocomplete system was inspiried by 
+The autocomplete system was inspiried by https://github.com/discordjs/discord-utils-bot. Credits are in the files that the systems are used in.
